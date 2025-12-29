@@ -61,11 +61,11 @@
       font-weight:900; letter-spacing:.2px;
     }
     .logo{
-      width:44px; height:44px; border-radius:14px;
+      width:104px; height:104px; border-radius:16px;
       object-fit:contain;
       background: rgba(255,255,255,.03);
       border:1px solid var(--border);
-      padding:7px;
+      padding:1px;
       box-shadow: 0 12px 40px rgba(0,0,0,.55);
     }
     .brand-title{font-size:14px; opacity:.95}
@@ -252,6 +252,21 @@
       .grid3{grid-template-columns:1fr}
       .split{grid-template-columns:1fr}
       .links{display:none}
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+
+      background-image: url("img/logo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 480px;
+
+      opacity: 0.5;
+      pointer-events: none;
+      }
     }
   </style>
 </head>
