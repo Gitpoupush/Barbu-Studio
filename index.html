@@ -3,63 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Bornes d’arcade & fléchettes connectées — vente, installation, custom. Prestations de développement web." />
-  <title>Arcade & Fléchettes | Vente • Installation • Dev Web</title>
+  <meta name="description" content="Barbu Studio : vente de bornes d’arcade personnalisées, installation de fléchettes électroniques à domicile et création de sites web pour particuliers." />
+  <title>Barbu Studio – Bornes d’arcade, fléchettes électroniques & création de sites web</title>
+
   <style>
     :root{
-      --bg:#0b0f17;
-      --card:#121a2a;
-      --muted:#9fb0c8;
-      --text:#e8eef8;
-      --accent:#7c5cff;
-      --accent2:#2de2e6;
-      --border:rgba(255,255,255,.10);
-      --shadow:0 18px 50px rgba(0,0,0,.45);
+      /* 🎨 Palette “galaxy purple” mais claire */
+      --bg0:#fbf9ff;      /* fond très clair */
+      --bg1:#f4f0ff;      /* lavande */
+      --bg2:#ede8ff;      /* lavande + */
+      --card:rgba(255,255,255,.72);
+      --card2:rgba(255,255,255,.82);
+      --text:#1a1430;     /* texte foncé */
+      --muted:#5b4e86;    /* texte secondaire */
+      --accent:#6f3bff;   /* violet principal */
+      --accent2:#b74cff;  /* violet rose */
+      --accent3:#5ee7ff;  /* léger cyan (étoiles) */
+      --border:rgba(40, 20, 90, .12);
+      --shadow:0 18px 50px rgba(33, 18, 90, .16);
+      --shadow2:0 10px 30px rgba(111, 59, 255, .18);
       --radius:18px;
       --max:1100px;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
+
+      /* 🌌 Fond clair galaxie */
       background:
-        radial-gradient(1200px 600px at 10% 0%, rgba(124,92,255,.25), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(45,226,230,.20), transparent 55%),
-        linear-gradient(180deg, #070a10 0%, var(--bg) 40%, #070a10 100%);
+        radial-gradient(1100px 600px at 10% 0%, rgba(111,59,255,.18), transparent 60%),
+        radial-gradient(900px 520px at 92% 10%, rgba(183,76,255,.16), transparent 55%),
+        radial-gradient(900px 520px at 70% 90%, rgba(94,231,255,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 35%, var(--bg2) 100%);
     }
+
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+
+    /* NAV */
     .nav{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.55);
+      background: rgba(255,255,255,.65);
       border-bottom:1px solid var(--border);
     }
     .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:14px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
     .logo{
       width:38px; height:38px; border-radius:12px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
     }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), transparent 35%);
+      opacity:.35;
+      transform: rotate(15deg);
+    }
+
     .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    .links a{color:var(--muted); font-weight:600; padding:10px 12px; border-radius:12px}
-    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .links a{
+      color:var(--muted);
+      font-weight:800;
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .links a:hover{
+      background: rgba(111,59,255,.10);
+      color: var(--text);
+    }
+
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px; border-radius:14px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#081017; font-weight:900;
+      color:white; font-weight:900;
       border:0;
-      box-shadow: 0 16px 40px rgba(124,92,255,.22);
+      box-shadow: var(--shadow2);
     }
-    .cta:hover{filter:brightness(1.05)}
+    .cta:hover{filter:brightness(1.03)}
+
+    /* HERO */
     header.hero{padding:44px 0 18px}
     .hero-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:stretch}
+
     .h-card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.62));
       border:1px solid var(--border);
       border-radius: var(--radius);
       padding:26px;
@@ -67,86 +104,117 @@
       position:relative;
       overflow:hidden;
     }
+    /* effet galaxie doux dans la carte */
     .h-card:before{
       content:"";
       position:absolute; inset:-2px;
-      background: radial-gradient(600px 280px at 20% 0%, rgba(124,92,255,.22), transparent 60%),
-                  radial-gradient(500px 260px at 90% 20%, rgba(45,226,230,.14), transparent 55%);
+      background:
+        radial-gradient(520px 240px at 18% 10%, rgba(111,59,255,.22), transparent 60%),
+        radial-gradient(520px 240px at 90% 20%, rgba(183,76,255,.16), transparent 58%),
+        radial-gradient(480px 220px at 65% 95%, rgba(94,231,255,.12), transparent 60%);
       pointer-events:none;
+      opacity:.9;
     }
     .h-card > *{position:relative}
-    .kicker{color:var(--muted); font-weight:700; letter-spacing:.2px}
+
+    .kicker{color:var(--muted); font-weight:900; letter-spacing:.2px}
     h1{margin:10px 0 12px; font-size: clamp(28px, 3.2vw, 44px); line-height:1.08}
-    .sub{color:var(--muted); font-size: 16px; line-height:1.6; max-width:56ch}
+    .sub{color:var(--muted); font-size: 16px; line-height:1.7; max-width:62ch}
+
     .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:11px 14px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.65);
       color:var(--text);
-      font-weight:800;
+      font-weight:900;
+      box-shadow: 0 10px 30px rgba(33,18,90,.08);
     }
-    .btn:hover{background:rgba(255,255,255,.07)}
+    .btn:hover{background: rgba(111,59,255,.10)}
+
     .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
     .pill{
       padding:8px 10px; border-radius:999px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      background: rgba(255,255,255,.60);
       color:var(--muted);
-      font-weight:700;
+      font-weight:900;
       font-size:13px;
     }
-    .side{
-      display:grid; gap:14px;
-    }
+
+    .side{display:grid; gap:14px;}
     .mini{
-      background: rgba(18,26,42,.65);
+      background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.68));
       border:1px solid var(--border);
       border-radius: var(--radius);
       padding:18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      box-shadow: 0 14px 40px rgba(33, 18, 90, .10);
+      position:relative;
+      overflow:hidden;
     }
-    .mini h3{margin:0 0 6px; font-size:16px}
-    .mini p{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+    .mini:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(420px 190px at 10% 0%, rgba(111,59,255,.18), transparent 60%),
+        radial-gradient(420px 190px at 90% 20%, rgba(183,76,255,.12), transparent 60%);
+      opacity:.6;
+      pointer-events:none;
+    }
+    .mini > *{position:relative}
+    .mini p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
+
+    /* SECTIONS */
     section{padding:22px 0}
     .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+
     .card{
       border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.62));
       border-radius: var(--radius);
       padding:18px;
+      box-shadow: 0 14px 40px rgba(33,18,90,.10);
     }
     .card h3{margin:0 0 8px}
-    .card p{margin:0; color:var(--muted); line-height:1.6}
+    .card p{margin:0; color:var(--muted); line-height:1.7}
+
     .badge{
       display:inline-flex; align-items:center; gap:8px;
-      color:#081017; font-weight:900;
-      background: linear-gradient(135deg, rgba(124,92,255,.9), rgba(45,226,230,.9));
+      color:white; font-weight:1000;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       padding:7px 10px; border-radius:999px; font-size:12px;
+      box-shadow: var(--shadow2);
     }
+
     .split{
       display:grid; grid-template-columns: 1fr 1fr; gap:14px;
       align-items:stretch;
     }
-    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
-    .price{font-weight:900; font-size:18px}
+
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.8}
+    .price{font-weight:1000; font-size:18px}
     .muted{color:var(--muted)}
-    .form{
-      display:grid; gap:10px;
-    }
+
+    .form{display:grid; gap:10px;}
     input, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
       border:1px solid var(--border);
-      background: rgba(0,0,0,.22);
+      background: rgba(255,255,255,.78);
       color: var(--text);
       outline:none;
+      box-shadow: 0 10px 30px rgba(33,18,90,.06);
     }
-    input:focus, textarea:focus{border-color: rgba(124,92,255,.55)}
+    input:focus, textarea:focus{
+      border-color: rgba(111,59,255,.55);
+      box-shadow: 0 0 0 4px rgba(111,59,255,.12);
+    }
     textarea{min-height:110px; resize:vertical}
+
     .foot{
       padding:26px 0 36px;
       border-top:1px solid var(--border);
@@ -154,17 +222,20 @@
       font-size:13px;
       margin-top:18px;
     }
+
+    /* WhatsApp floating */
     .wa-float{
       position:fixed; right:16px; bottom:16px; z-index:40;
       display:flex; gap:10px; align-items:center;
       padding:12px 14px;
       border-radius:999px;
-      background: rgba(18,26,42,.75);
+      background: rgba(255,255,255,.75);
       border:1px solid var(--border);
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
     }
     .dot{width:10px; height:10px; border-radius:99px; background:var(--accent2)}
+
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
@@ -173,15 +244,16 @@
     }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- NAV -->
   <div class="nav">
     <div class="wrap nav-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <div style="font-size:14px; opacity:.95;">Arcade & Fléchettes</div>
-          <div style="font-size:12px; color:var(--muted); font-weight:700;">Vente • Installation • Dev Web</div>
+          <div style="font-size:14px; opacity:.95;">Barbu Studio</div>
+          <div style="font-size:12px; color:var(--muted); font-weight:900;">Arcade • Fléchettes • Dev Web</div>
         </div>
       </div>
 
@@ -196,14 +268,17 @@
     </div>
   </div>
 
+  <!-- HERO -->
   <header class="wrap hero" id="top">
     <div class="hero-grid">
       <div class="h-card">
-        <div class="kicker">Pour particuliers • Sur-mesure • Livraison/installation possible</div>
-        <h1>Bornes d’arcade & fléchettes connectées<br/>+ sites web qui font pro.</h1>
+        <div class="kicker">Pour particuliers • Sur-mesure • Livraison / installation possible</div>
+
+        <h1>Barbu Studio<br/>Arcade, fléchettes électroniques & sites web.</h1>
+
         <p class="sub">
-          Je vends et personnalise des bornes d’arcade, j’installe des cibles de fléchettes électroniques,
-          et je développe des sites vitrines / petits outils web. Simple, propre, efficace.
+          <strong>Barbu Studio</strong> : vente de <strong>bornes d’arcade personnalisées</strong>, <strong>installation de fléchettes électroniques à domicile</strong>
+          et <strong>création de sites web</strong> pour particuliers. Simple, propre, efficace.
         </p>
 
         <div class="hero-actions">
@@ -224,19 +299,19 @@
         <div class="mini">
           <span class="badge">🎮 Bornes d’arcade</span>
           <p style="margin-top:10px">
-            Modèles compacts ou bartop, design au choix, configuration propre (système, roms si légalement fournies par le client).
+            Bartop ou format compact, design au choix, configuration propre. Accompagnement et support.
           </p>
         </div>
         <div class="mini">
           <span class="badge">🎯 Fléchettes</span>
           <p style="margin-top:10px">
-            Cible électronique, conseil matériel, montage mural, réglage distance/hauteur, mise en service app.
+            Conseil matériel, fixation murale, réglages (hauteur / distance) et mise en service des apps connectées.
           </p>
         </div>
         <div class="mini">
           <span class="badge">💻 Dev web</span>
           <p style="margin-top:10px">
-            Site vitrine rapide, formulaire, SEO de base, et outils simples (réservations, devis, dashboard…).
+            Site vitrine rapide, formulaire, mise en ligne. Maintenance possible si tu veux rester tranquille.
           </p>
         </div>
       </div>
@@ -244,71 +319,74 @@
   </header>
 
   <main class="wrap">
+    <!-- SERVICES -->
     <section id="services">
       <h2 style="margin:0 0 12px;">Services</h2>
       <div class="grid3">
         <div class="card">
-          <h3>Vente & personnalisation arcade</h3>
-          <p>Choix du format, habillage, configuration, tests. Option livraison/installation.</p>
+          <h3>Vente & personnalisation de bornes d’arcade</h3>
+          <p>Format, habillage, configuration, tests. Livraison/installation possible.</p>
           <ul class="list">
-            <li>Design stickers / thème</li>
-            <li>Matériel sélectionné</li>
+            <li>Borne arcade personnalisée pour particulier</li>
+            <li>Design (thème, stickers, finition)</li>
             <li>Support après-vente</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Fléchettes électroniques</h3>
-          <p>Conseil, pose et mise en service (hauteur officielle, distance, connectivité).</p>
+          <h3>Installation fléchettes électroniques à domicile</h3>
+          <p>Pose propre + réglages + explication de l’app et des modes de jeu.</p>
           <ul class="list">
-            <li>Fixation murale propre</li>
-            <li>Réglages & tests</li>
-            <li>Explication app & modes</li>
+            <li>Fixation murale et centrage</li>
+            <li>Réglages hauteur / distance</li>
+            <li>Tests et prise en main</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Dev web / logiciel</h3>
-          <p>Site vitrine, page de vente, formulaire, mini-apps. Adapté mobile.</p>
+          <h3>Création de site web</h3>
+          <p>Site vitrine, page de présentation, formulaire. Adapté mobile.</p>
           <ul class="list">
-            <li>Site rapide & clair</li>
-            <li>SEO basique</li>
+            <li>Site clair et rapide</li>
+            <li>SEO de base (titres, description)</li>
             <li>Maintenance possible</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- REALISATIONS / PRIX -->
     <section id="realisations">
       <div class="split">
         <div class="card">
           <h2 style="margin:0 0 8px;">Réalisations</h2>
-          <p class="muted">Remplace ces exemples par tes photos / projets dès que tu en as.</p>
+          <p class="muted">Tu remplaceras ces exemples par tes photos dès que tu en as.</p>
           <ul class="list">
-            <li>Arcade bartop “Neo-Style” (custom vinyle)</li>
-            <li>Installation cible fléchettes connectée + éclairage</li>
-            <li>Site vitrine “1 page” pour activité locale</li>
+            <li>Bartop arcade personnalisé (thème au choix)</li>
+            <li>Installation cible fléchettes + mise en service app</li>
+            <li>Site vitrine 1 page (mobile + formulaire)</li>
           </ul>
         </div>
         <div class="card">
           <h2 style="margin:0 0 8px;">Offres indicatives</h2>
-          <p class="muted">Tu adapteras selon ton coût matériel et ton temps.</p>
+          <p class="muted">Tu adaptes selon ton coût matériel et ton temps.</p>
           <p class="price">Site vitrine : <span class="muted">à partir de</span> 299€</p>
           <p class="price" style="margin-top:8px;">Installation fléchettes : <span class="muted">à partir de</span> 79€</p>
-          <p class="price" style="margin-top:8px;">Arcade : <span class="muted">sur devis</span></p>
-          <p class="muted" style="margin-top:10px;">* Prix indicatifs, devis final après discussion.</p>
+          <p class="price" style="margin-top:8px;">Borne arcade : <span class="muted">sur devis</span></p>
+          <p class="muted" style="margin-top:10px;">* Prix indicatifs. Devis final après discussion.</p>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section id="process">
       <h2 style="margin:0 0 12px;">Comment ça se passe</h2>
       <div class="grid3">
         <div class="card">
           <h3>1) Besoin</h3>
-          <p>On échange (message / appel). Tu me dis ton budget, tes goûts, ton délai.</p>
+          <p>Message/appel : budget, ville, délai, détails — on clarifie vite.</p>
         </div>
         <div class="card">
           <h3>2) Devis</h3>
-          <p>Devis clair + planning. Tu valides, on démarre.</p>
+          <p>Devis clair + planning. Tu valides, je démarre.</p>
         </div>
         <div class="card">
           <h3>3) Livraison / mise en ligne</h3>
@@ -317,17 +395,16 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="split">
         <div class="card">
           <h2 style="margin:0 0 8px;">Contact</h2>
-          <p class="muted">
-            Remplis le formulaire ou contacte-moi directement.
-          </p>
+          <p class="muted">Remplis le formulaire ou contacte-moi directement.</p>
           <ul class="list">
-            <li>📍 Zone : <span class="muted">à renseigner</span></li>
-            <li>📞 Téléphone : <a id="telLink" href="tel:+33000000000"><strong>à renseigner</strong></a></li>
-            <li>✉️ Email : <a id="mailLink" href="mailto:contact@example.com"><strong>à renseigner</strong></a></li>
+            <li>📍 Zone : <span class="muted" id="zoneText">Solgne & alentours</span></li>
+            <li>📞 Téléphone : <a id="telLink" href="tel:+33000000000"><strong>—</strong></a></li>
+            <li>✉️ Email : <a id="mailLink" href="mailto:contact@example.com"><strong>—</strong></a></li>
           </ul>
         </div>
 
@@ -341,41 +418,40 @@
             <button class="cta" type="submit">Envoyer</button>
             <div class="muted" style="font-size:12px; line-height:1.4;">
               En cliquant sur “Envoyer”, ton application mail s’ouvrira (envoi via mailto).
-              Si tu veux un vrai envoi serveur plus tard, je te le mets en place.
             </div>
           </form>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <div class="foot">
       <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <div>© <span id="year"></span> — Arcade & Fléchettes • Dev Web</div>
-        <div>
-          <a class="muted" href="#top">Retour en haut</a>
-        </div>
+        <div>© <span id="year"></span> — Barbu Studio</div>
+        <div><a class="muted" href="#top">Retour en haut</a></div>
       </div>
     </div>
   </main>
 
+  <!-- WhatsApp floating -->
   <a class="wa-float" id="waBtn" href="#" aria-label="Contacter sur WhatsApp">
     <span class="dot" aria-hidden="true"></span>
-    <span style="font-weight:900;">WhatsApp</span>
+    <span style="font-weight:1000;">WhatsApp</span>
     <span class="muted" style="font-size:13px;">— réponse rapide</span>
   </a>
 
   <script>
-    // === CONFIG : remplace ces infos ===
+    // === CONFIG : tes infos ===
     const CONFIG = {
-      phoneInternational: "+33673216734",     // format international (WhatsApp + tel)
-      phoneDisplay: "0673216734",         // affichage
-      email: "latelierdu@barbu.com",         // ton email
-      zone: "Solgne & alentours",             // zone d'intervention
-      whatsappMessage: "Bonjour, je souhaite un devis (arcade / fléchettes)."
+      phoneInternational: "+33673216734",
+      phoneDisplay: "06 73 21 67 34",
+      email: "latelierdu@barbu.com",
+      zone: "Solgne & alentours",
+      whatsappMessage: "Bonjour, je souhaite un devis (borne arcade / fléchettes / site web)."
     };
 
-    // Injecte contact
     document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("zoneText").textContent = CONFIG.zone;
 
     const telLink = document.getElementById("telLink");
     telLink.href = "tel:" + CONFIG.phoneInternational.replace(/\s/g, "");
@@ -385,17 +461,10 @@
     mailLink.href = "mailto:" + CONFIG.email;
     mailLink.textContent = CONFIG.email;
 
-    // Zone
-    const zoneLi = document.querySelector('#contact ul.list li:first-child span');
-    if (zoneLi) zoneLi.textContent = CONFIG.zone;
-
-    // WhatsApp button
     const waBtn = document.getElementById("waBtn");
-    const waUrl = "https://wa.me/" + CONFIG.phoneInternational.replace("+","").replace(/\s/g,"")
+    waBtn.href = "https://wa.me/" + CONFIG.phoneInternational.replace("+","").replace(/\s/g,"")
       + "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
-    waBtn.href = waUrl;
 
-    // Form mailto
     document.getElementById("contactForm").addEventListener("submit", function(e){
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
@@ -407,14 +476,12 @@
         "Nom: " + name + "\n" +
         "Email: " + email + "\n\n" +
         message + "\n\n" +
-        "Envoyé depuis le site vitrine.";
+        "Envoyé depuis le site Barbu Studio.";
 
-      const mailto =
+      window.location.href =
         "mailto:" + encodeURIComponent(CONFIG.email) +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
     });
   </script>
 </body>
