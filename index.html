@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Bornes d’arcade & fléchettes connectées — Vente , Installation et Location Developpement web." />
+  <meta name="description" content="Bornes d’arcade & fléchettes connectées — Vente, Installation et Location. Développement web." />
   <title>Arcade & Fléchettes | Vente • Installation • Dev Web</title>
+
   <style>
     :root{
       --bg:#0b0f17;
@@ -70,8 +71,9 @@
     .h-card:before{
       content:"";
       position:absolute; inset:-2px;
-      background: radial-gradient(600px 280px at 20% 0%, rgba(124,92,255,.22), transparent 60%),
-      radial-gradient(500px 260px at 90% 20%, rgba(45,226,230,.14), transparent 55%);
+      background:
+              radial-gradient(600px 280px at 20% 0%, rgba(124,92,255,.22), transparent 60%),
+              radial-gradient(500px 260px at 90% 20%, rgba(45,226,230,.14), transparent 55%);
       pointer-events:none;
     }
     .h-card > *{position:relative}
@@ -98,9 +100,7 @@
       font-weight:700;
       font-size:13px;
     }
-    .side{
-      display:grid; gap:14px;
-    }
+    .side{display:grid; gap:14px}
     .mini{
       background: rgba(18,26,42,.65);
       border:1px solid var(--border);
@@ -126,16 +126,11 @@
       background: linear-gradient(135deg, rgba(124,92,255,.9), rgba(45,226,230,.9));
       padding:7px 10px; border-radius:999px; font-size:12px;
     }
-    .split{
-      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-      align-items:stretch;
-    }
+    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:stretch}
     .list{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
     .price{font-weight:900; font-size:18px}
     .muted{color:var(--muted)}
-    .form{
-      display:grid; gap:10px;
-    }
+    .form{display:grid; gap:10px}
     input, textarea{
       width:100%;
       padding:12px 12px;
@@ -173,8 +168,8 @@
     }
   </style>
 </head>
-<body>
 
+<body>
 <div class="nav">
   <div class="wrap nav-inner">
     <div class="brand">
@@ -202,7 +197,7 @@
       <div class="kicker">Pour particuliers • Sur-mesure • Livraison/installation possible</div>
       <h1>Bornes d’arcade & fléchettes connectées<br/>+ sites web qui font pro.</h1>
       <p class="sub">
-        Je vends et personnalise des bornes d’arcade, j’installe des cibles de fléchettes électroniques,
+        Je vends et personnalise des bornes d’arcade, des cibles de fléchettes électroniques,
         et je développe des sites vitrines / petits outils web. Simple, propre, efficace.
       </p>
 
@@ -271,7 +266,6 @@
         <ul class="list">
           <li>Site rapide & clair</li>
           <li>SEO basique</li>
-          <li>Maintenance possible</li>
         </ul>
       </div>
     </div>
@@ -300,19 +294,19 @@
   </section>
 
   <section id="process">
-    <h2 style="margin:0 0 12px;">Comment ça se passe</h2>
+    <h2 style="margin:0 0 12px;">En seulement 3 étapes</h2>
     <div class="grid3">
       <div class="card">
-        <h3>1) Besoin</h3>
-        <p>On échange (message / appel). Tu me dis ton budget, tes goûts, ton délai.</p>
+        <h3>Étude projet</h3>
+        <p>On parle de ton projet et de tes besoins.</p>
       </div>
       <div class="card">
-        <h3>2) Devis</h3>
-        <p>Devis clair + planning. Tu valides, on démarre.</p>
+        <h3>Devis sur mesure</h3>
+        <p>Proposition adaptée au projet.</p>
       </div>
       <div class="card">
-        <h3>3) Livraison / mise en ligne</h3>
-        <p>Installation propre ou livraison. Pour le web : mise en ligne + support.</p>
+        <h3>Fabrication & livraison</h3>
+        <p>Installation ou livraison.</p>
       </div>
     </div>
   </section>
@@ -321,13 +315,14 @@
     <div class="split">
       <div class="card">
         <h2 style="margin:0 0 8px;">Contact</h2>
-        <p class="muted">
-          Remplis le formulaire ou contacte-moi directement.
-        </p>
+        <p class="muted">Remplis le formulaire ou contacte-moi directement.</p>
+
         <ul class="list">
-          <li>📍 Zone : <span class="muted">à renseigner</span></li>
-          <li>📞 Téléphone : <a id="telLink" href="tel:+33000000000"><strong>à renseigner</strong></a></li>
-          <li>✉️ Email : <a id="mailLink" href="mailto:contact@example.com"><strong>à renseigner</strong></a></li>
+          <li>📍 Zone : <span class="muted" id="zoneText">—</span></li>
+          <li>🏠 Adresse : <span class="muted" id="addressText">—</span></li>
+          <li>📞 Téléphone : <a id="telLink" href="#"><strong id="telText">—</strong></a></li>
+          <li>✉️ Email : <a id="mailLink" href="#"><strong id="mailText">—</strong></a></li>
+          <li>🧭 Itinéraire : <a id="mapsLink" href="#" target="_blank" rel="noopener"><strong>Ouvrir Google Maps</strong></a></li>
         </ul>
       </div>
 
@@ -341,7 +336,6 @@
           <button class="cta" type="submit">Envoyer</button>
           <div class="muted" style="font-size:12px; line-height:1.4;">
             En cliquant sur “Envoyer”, ton application mail s’ouvrira (envoi via mailto).
-            Si tu veux un vrai envoi serveur plus tard, je te le mets en place.
           </div>
         </form>
       </div>
@@ -351,56 +345,63 @@
   <div class="foot">
     <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
       <div>© <span id="year"></span> — Arcade & Fléchettes • Dev Web</div>
-      <div>
-        <a class="muted" href="#top">Retour en haut</a>
-      </div>
+      <div><a class="muted" href="#top">Retour en haut</a></div>
     </div>
   </div>
 </main>
 
-<a class="wa-float" id="waBtn" href="#" aria-label="Contacter sur WhatsApp">
+<a class="wa-float" id="waBtn" href="#" aria-label="Contacter sur WhatsApp" target="_blank" rel="noopener">
   <span class="dot" aria-hidden="true"></span>
   <span style="font-weight:900;">WhatsApp</span>
   <span class="muted" style="font-size:13px;">— réponse rapide</span>
 </a>
 
 <script>
-  // === CONFIG : remplace ces infos ===
+  // ====== CONFIG (à modifier) ======
   const CONFIG = {
-    phoneInternational: "+33673216734",     // format international (WhatsApp + tel)
-    email: "contact@barbu-studio.fr",         // ton email
-    zone: "Solgne & alentours",             // zone d'intervention
-    whatsappMessage: "Bonjour, je souhaite un devis (arcade / fléchettes)."
+    email: "contact@barbu-studio.fr",
+    phoneInternational: "+33673216734",       // pour WhatsApp / tel: (format international)
+    phoneDisplay: "06 73 21 67 34",           // affichage humain
+    zone: "Metz / Nancy & alentours",
+    address: "Solgne (57) — sur RDV",         // mets ici ton adresse ou “secteur”
+    mapsQuery: "Solgne 57420",                // ce que Google Maps va chercher
+    whatsappMessage: "Bonjour, je souhaite un devis (arcade / fléchettes / site web)."
   };
 
-  // Injecte contact
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // ====== Helpers ======
+  const $ = (id) => document.getElementById(id);
 
-  const telLink = document.getElementById("telLink");
-  telLink.href = "tel:" + CONFIG.phoneInternational.replace(/\s/g, "");
-  telLink.textContent = CONFIG.phoneDisplay;
+  // Année
+  $("year").textContent = new Date().getFullYear();
 
-  const mailLink = document.getElementById("mailLink");
-  mailLink.href = "mailto:" + CONFIG.email;
-  mailLink.textContent = CONFIG.email;
+  // Email
+  $("mailLink").href = "mailto:" + CONFIG.email;
+  $("mailText").textContent = CONFIG.email;
 
-  // Zone
-  const zoneLi = document.querySelector('#contact ul.list li:first-child span');
-  if (zoneLi) zoneLi.textContent = CONFIG.zone;
+  // Téléphone
+  const telRaw = CONFIG.phoneInternational.replace(/\s/g, "");
+  $("telLink").href = "tel:" + telRaw;
+  $("telText").textContent = CONFIG.phoneDisplay || CONFIG.phoneInternational;
 
-  // WhatsApp button
-  const waBtn = document.getElementById("waBtn");
-  const waUrl = "https://wa.me/" + CONFIG.phoneInternational.replace("+","").replace(/\s/g,"")
+  // Zone / adresse
+  $("zoneText").textContent = CONFIG.zone;
+  $("addressText").textContent = CONFIG.address;
+
+  // Google Maps (itinéraire)
+  $("mapsLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.mapsQuery);
+
+  // WhatsApp
+  const waUrl = "https://wa.me/" + telRaw.replace("+","")
           + "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
-  waBtn.href = waUrl;
+  $("waBtn").href = waUrl;
 
   // Form mailto
-  document.getElementById("contactForm").addEventListener("submit", function(e){
+  $("contactForm").addEventListener("submit", function(e){
     e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name = $("name").value.trim();
+    const email = $("email").value.trim();
+    const subject = $("subject").value.trim();
+    const message = $("message").value.trim();
 
     const body =
             "Nom: " + name + "\n" +
